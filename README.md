@@ -1,2 +1,2 @@
-was bored
-probably never updating this
+was bored.
+probably never updating this.
