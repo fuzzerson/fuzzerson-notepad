@@ -82,6 +82,10 @@ def openFile():
         fileName = filePath
         notify.configure(text="File Opened")
 
+def selectAll(event):
+    event.widget.event_generate("<<SelectAll>>")
+    return "break"
+
 #Text font
 font = font.Font(family="Arial", size=18,)
 
@@ -122,5 +126,7 @@ text.pack(padx="10", pady=(0, 10), fill="both", expand="True")
 
 root.bind("<Control-equal>", lambda e: plusFontSize())
 root.bind("<Control-minus>", lambda e: minusFontSize())
+text.bind_class("Text", "<Control-a>", selectAll)
+text.bind_class("Text", "<Control-A>", selectAll)
 
 root.mainloop()
